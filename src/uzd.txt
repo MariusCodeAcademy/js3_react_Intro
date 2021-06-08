@@ -1,0 +1,38 @@
+1. susikurti nauja react aplikacija su create-react-app
+
+2. src direktorijoje susikurti components
+
+3. susikurti classini(toki kaip darem ryte) komponenta vacationList.jsx
+
+    3.0 index.js isiimportuoti VacationList ir atvaizduoti kaip pagrindini elmenta
+  3.1  vacationList.jsx state dalyje susikurti masyva is 5+ atostogu vietu
+  3.2  atvaizduoti ta masyva saraso pavidalu komponente. nepamirsti key={}
+
+4. jei atostodu masyvas tuscias pranesti apie tai su paragrafu
+
+5. prisideti stiliaus faila .css ir apipavidalinti savo sarasa su css taisyklem
+
+6. Susikurti componenta vacationWithImages kaip klasini komponenta
+
+6.1 pasidaryti ji pagrindiniu index.js
+
+7. state susikurti objektu masyva is 5+ vietu
+holidaysData : [ 
+    {id: 1, title: 'bahamas', img: 'beach.jpg'}, 
+    {id: 2, title: 'jamaika', img: 'jam.jpg'}, 
+    ....
+]
+
+8. sugeneruoti sarasa atostogu vietu su paveiksleliais korteliu ar panasiu 
+    elementu pavidalu. atvaizduoti juos komponente.
+
+9. prideti stiliau faila ir apipavidalinti graziai 
+
+10. susikurti vacationTable.jsx klasini komponenta
+
+10.1 pasidaryti ji pragrindiniu index.js
+
+11. atsikopijuoti 7 punkto masyva ir sugeneruoti html lentele is duomenu esanciu
+    masyve
+
+12. prideti stiliu kad butu grazu
