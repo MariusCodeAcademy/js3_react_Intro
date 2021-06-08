@@ -14,15 +14,11 @@ class Counter extends Component {
     textAlign: 'center',
   };
 
-  renderColors() {
-    // if (this.state.colors.length === 0)
-    //   return <p className="alert alert-warning">There are no colors left</p>;
-      
-    return this.state.colors.map((color) => (
-      <li key={color} style={{ background: color }} className="list-group-item">
-        {color}
-      </li>
-    ));
+  handleIncrement() {
+      console.log('You pressed a btn');
+      console.log("this.state.count", this);
+      // obj.method() this === obj
+      // function() this === window, undefined
   }
 
   render() {
@@ -30,7 +26,7 @@ class Counter extends Component {
       <div className="container mt-4">
         <h2 style={{ fontSize: '2em' }}>I am React counter component</h2>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button className="btn btn-warning"> Press me</button>
+        <button onClick={this.handleIncrement} className="btn btn-warning"> Press me</button>
 
         <ul className="list-group mt-4">
             {/* Jei kaire salyga true grazinam kas po desine && ... */}
@@ -45,6 +41,13 @@ class Counter extends Component {
     );
   }
 
+ renderColors() {
+    return this.state.colors.map((color) => (
+      <li key={color} style={{ background: color }} className="list-group-item">
+        {color}
+      </li>
+    ));
+  }
   getBadgeClasses() {
     let badgeClasses = 'badge mr-3 badge-';
     badgeClasses += this.state.count === 0 ? 'danger' : 'info';
