@@ -20,7 +20,7 @@
 holidaysData : [ 
     {id: 1, title: 'bahamas', img: 'beach.jpg'}, 
     {id: 2, title: 'jamaika', img: 'jam.jpg'}, 
-    ....
+    ....  
 ]
 
 8. sugeneruoti sarasa atostogu vietu su paveiksleliais korteliu ar panasiu 
@@ -28,6 +28,7 @@ holidaysData : [
 
 9. prideti stiliau faila ir apipavidalinti graziai 
 
+9. prideti stiliau faila ir apipavidalinti graziai 
 10. susikurti vacationTable.jsx klasini komponenta
 
 10.1 pasidaryti ji pragrindiniu index.js
@@ -36,3 +37,5 @@ holidaysData : [
     masyve
 
 12. prideti stiliu kad butu grazu
+
+13. padaryti todo app su react  team
