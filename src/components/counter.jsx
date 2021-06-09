@@ -13,7 +13,8 @@ class Counter extends Component {
   };
 
   // arrow funkcija nekuria savo this
-  handleIncrement = () => {
+  handleIncrement = (btnId) => {
+    console.log('btnId', btnId);
     // niekada nekeiciam state tiesiogiai !!!!!!
     // this.state.count++;
     this.setState({ count: this.state.count + 1 });
@@ -24,8 +25,11 @@ class Counter extends Component {
       <div className="container mt-4">
         <h2 style={{ fontSize: '2em' }}>I am React counter component</h2>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-        <button onClick={this.handleIncrement} className="btn btn-warning">
-          Press me
+        <button onClick={() => this.handleIncrement('btn_1')} className="btn btn-warning">
+          Increase 1
+        </button>
+        <button onClick={() => this.handleIncrement('btn_2')} className="btn btn-info">
+          Minus 2
         </button>
       </div>
     );
