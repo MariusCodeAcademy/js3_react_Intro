@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import Counter from './counter';
 
 class Counters extends Component {
-  state = {};
+  state = {
+    counters: [
+      { id: 1, value: 4 },
+      { id: 2, value: 10 },
+      { id: 3, value: 0 },
+      { id: 4, value: 11 },
+    ],
+  };
 
   render() {
     return (
       <div>
         <h2>Counters component</h2>
-        <Counter />
-        <Counter />
-        <Counter />
-        <Counter />
+        {this.state.counters.map((c) => (
+          <Counter key={c.id} value="10" oId="blue" />
+        ))}
       </div>
     );
   }

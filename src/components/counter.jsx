@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Counter extends Component {
   // locali componento busena
   state = {
-    count: 1,
+    count: 0,
   };
 
   h2ElStyles = {
@@ -20,19 +20,11 @@ class Counter extends Component {
 
     let diff = btnId === 'btn_1' ? 1 : -1;
 
-    // if (btnId === 'btn_2') {
-    //   this.setState({ count: this.state.count - 1 });
-    //   return;
-    // }
-
     this.setState({ count: this.state.count + diff });
   };
 
-  // () => {
-  //   this.handleIncrement('btn_1')
-  // }
-
   render() {
+    console.log('this.props', this.props.value);
     return (
       <div className="mt-4">
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
