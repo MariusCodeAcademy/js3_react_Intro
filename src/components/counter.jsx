@@ -34,8 +34,7 @@ class Counter extends Component {
 
   render() {
     return (
-      <div className="container mt-4">
-        <h2 style={{ fontSize: '2em' }}>I am React counter component</h2>
+      <div className="mt-4">
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <div className="btn-group">
           <button onClick={() => this.handleIncrement('btn_1')} className="btn btn-warning">
