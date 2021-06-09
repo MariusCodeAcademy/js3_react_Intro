@@ -17,8 +17,20 @@ class Counter extends Component {
     console.log('btnId', btnId);
     // niekada nekeiciam state tiesiogiai !!!!!!
     // this.state.count++;
-    this.setState({ count: this.state.count + 1 });
+
+    let diff = btnId === 'btn_1' ? 1 : -1;
+
+    // if (btnId === 'btn_2') {
+    //   this.setState({ count: this.state.count - 1 });
+    //   return;
+    // }
+
+    this.setState({ count: this.state.count + diff });
   };
+
+  // () => {
+  //   this.handleIncrement('btn_1')
+  // }
 
   render() {
     return (
