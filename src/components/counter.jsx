@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Counter extends Component {
   // locali componento busena
   state = {
-    count: 0,
+    count: this.props.value,
   };
 
   h2ElStyles = {
@@ -24,7 +24,7 @@ class Counter extends Component {
   };
 
   render() {
-    console.log('this.props', this.props.value);
+    console.log('this.props', this.props);
     return (
       <div className="mt-4">
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
