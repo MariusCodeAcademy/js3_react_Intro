@@ -4,7 +4,7 @@
 
 3. susikurti classini(toki kaip darem ryte) komponenta vacationList.jsx
 
-    3.0 index.js isiimportuoti VacationList ir atvaizduoti kaip pagrindini elmenta
+  3.0  index.js isiimportuoti VacationList ir atvaizduoti kaip pagrindini elmenta
   3.1  vacationList.jsx state dalyje susikurti masyva is 5+ atostogu vietu
   3.2  atvaizduoti ta masyva saraso pavidalu komponente. nepamirsti key={}
 
