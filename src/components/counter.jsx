@@ -27,6 +27,7 @@ class Counter extends Component {
     console.log('this.props', this.props);
     return (
       <div className="mt-4">
+        {this.props.children}
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <div className="btn-group">
           <button onClick={() => this.handleIncrement('btn_1')} className="btn btn-warning">
