@@ -7,7 +7,7 @@ class App extends Component {
     counters: [
       { id: 1, value: 4 },
       { id: 2, value: 10 },
-      { id: 3, value: 1 },
+      { id: 3, value: 0 },
       { id: 4, value: 11 },
     ],
   };
@@ -59,7 +59,10 @@ class App extends Component {
   render() {
     return (
       <div className="App ">
-        <Navbar />
+        <Navbar
+          countersCount={this.state.counters.length}
+          activeCount={this.state.counters.filter((c) => c.value > 0).length}
+        />
         <main className="container mt-3">
           <Counters
             counters={this.state.counters}

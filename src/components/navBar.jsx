@@ -5,7 +5,10 @@ export default class Navbar extends Component {
     return (
       <nav className="navbar navbar-light bg-light">
         <span className="navbar-brand mb-0">
-          <strong>Counter</strong>Anywhere
+          <strong>Counter</strong>Anywhere{' '}
+          <span>
+            {this.props.countersCount}/{this.props.activeCount}
+          </span>
         </span>
       </nav>
     );
