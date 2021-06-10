@@ -34,17 +34,18 @@ class Counters extends Component {
 
   // arrow funkcija nekuria savo this
   handleIncrement = (plusOrMinus, counter) => {
-    console.log('plusOrMinus', plusOrMinus);
-    console.log('counter', counter);
+    // console.log('plusOrMinus', plusOrMinus);
+    // console.log('counter', counter);
 
     // pasidaryt state.counters kopija
-    const counterCopy = [...this.state.counters];
+    const countersCopy = [...this.state.counters];
 
     // surasti kuris counteris parase padinti
+    const counterToIncrement = countersCopy.find((c) => c.id === counter.id);
 
     // kopijoj padidinti value 1
-
-    // this.setState({ :  });
+    counterToIncrement.value++;
+    this.setState({ counters: countersCopy });
 
     // niekada nekeiciam state tiesiogiai !!!!!!
     // this.state.count++;
