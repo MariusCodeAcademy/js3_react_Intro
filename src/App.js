@@ -1,10 +1,18 @@
+import React, { Component } from 'react';
 import Counters from './components/counters';
-function App() {
-  return (
-    <div className="App container mt-3">
-      <Counters />
-    </div>
-  );
+import Navbar from './components/navBar';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App ">
+        <Navbar />
+        <main className="container mt-3">
+          <Counters />
+        </main>
+      </div>
+    );
+  }
 }
 
 export default App;
