@@ -40,13 +40,7 @@ class Counters extends Component {
           Reset counters
         </button>
         {this.state.counters.map((c) => (
-          <Counter
-            key={c.id}
-            value={c.value}
-            id={c.id}
-            oId="blue"
-            onDelete={this.handleDelete}
-          ></Counter>
+          <Counter key={c.id} counter={c} oId="blue" onDelete={this.handleDelete}></Counter>
         ))}
       </div>
     );

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Counter extends Component {
   // locali componento busena
   state = {
-    count: this.props.value,
+    value: this.props.counter.value,
   };
 
   h2ElStyles = {
@@ -20,14 +20,14 @@ class Counter extends Component {
 
     let diff = btnId === 'btn_1' ? 1 : -1;
 
-    this.setState({ count: this.state.count + diff });
+    this.setState({ value: this.state.value + diff });
   };
 
   render() {
     // console.log('this.props', this.props);
     return (
       <div className="mt-4">
-        <span className="mr-3"># {this.props.id}</span>
+        <span className="mr-3"># {this.props.counter.id}</span>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <div className="btn-group">
           <button onClick={() => this.handleIncrement('btn_1')} className="btn btn-warning">
@@ -38,7 +38,7 @@ class Counter extends Component {
           </button>
         </div>
         <button
-          onClick={() => this.props.onDelete(this.props.id)}
+          onClick={() => this.props.onDelete(this.props.counter.id)}
           className="btn btn-danger btn-sm ml-5"
         >
           Delete me please
@@ -56,12 +56,12 @@ class Counter extends Component {
   }
   getBadgeClasses() {
     let badgeClasses = 'badge mr-3 badge-';
-    badgeClasses += this.state.count === 0 ? 'danger' : 'info';
+    badgeClasses += this.state.value === 0 ? 'danger' : 'info';
     return badgeClasses;
   }
 
   formatCount() {
-    const { count } = this.state;
+    const { value: count } = this.state;
     return count === 0 ? 'Out of stock' : count;
   }
 }
