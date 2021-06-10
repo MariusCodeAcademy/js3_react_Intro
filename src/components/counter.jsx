@@ -1,28 +1,6 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-  // locali componento busena
-  state = {
-    value: this.props.counter.value,
-  };
-
-  h2ElStyles = {
-    background: 'tomato',
-    color: 'snow',
-    textAlign: 'center',
-  };
-
-  // arrow funkcija nekuria savo this
-  handleIncrement = (btnId) => {
-    console.log('btnId', btnId);
-    // niekada nekeiciam state tiesiogiai !!!!!!
-    // this.state.count++;
-
-    let diff = btnId === 'btn_1' ? 1 : -1;
-
-    this.setState({ value: this.state.value + diff });
-  };
-
   render() {
     // console.log('this.props', this.props);
     return (
@@ -30,10 +8,16 @@ class Counter extends Component {
         <span className="mr-3"># {this.props.counter.id}</span>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <div className="btn-group">
-          <button onClick={() => this.handleIncrement('btn_1')} className="btn btn-warning">
+          <button
+            onClick={() => this.props.onIncrement('btn_1', this.props.counter)}
+            className="btn btn-warning"
+          >
             +
           </button>
-          <button onClick={() => this.handleIncrement('btn_2')} className="btn btn-info">
+          <button
+            onClick={() => this.props.onIncrement('btn_2', this.props.counter)}
+            className="btn btn-info"
+          >
             -
           </button>
         </div>
@@ -48,7 +32,7 @@ class Counter extends Component {
   }
 
   renderColors() {
-    return this.state.colors.map((color) => (
+    return this.props.counter.colors.map((color) => (
       <li key={color} style={{ background: color }} className="list-group-item">
         {color}
       </li>
@@ -56,12 +40,12 @@ class Counter extends Component {
   }
   getBadgeClasses() {
     let badgeClasses = 'badge mr-3 badge-';
-    badgeClasses += this.state.value === 0 ? 'danger' : 'info';
+    badgeClasses += this.props.counter.value === 0 ? 'danger' : 'info';
     return badgeClasses;
   }
 
   formatCount() {
-    const { value: count } = this.state;
+    const { value: count } = this.props.counter;
     return count === 0 ? 'Out of stock' : count;
   }
 }

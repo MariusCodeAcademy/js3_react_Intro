@@ -32,6 +32,18 @@ class Counters extends Component {
     this.setState({ counters: nunulinta });
   };
 
+  // arrow funkcija nekuria savo this
+  handleIncrement = (plusOrMinus, counter) => {
+    console.log('plusOrMinus', plusOrMinus);
+    console.log('counter', counter);
+    // niekada nekeiciam state tiesiogiai !!!!!!
+    // this.state.count++;
+
+    // let diff = btnId === 'btn_1' ? 1 : -1;
+
+    // this.setState({ value: this.state.value + diff });
+  };
+
   render() {
     return (
       <div>
@@ -40,7 +52,12 @@ class Counters extends Component {
           Reset counters
         </button>
         {this.state.counters.map((c) => (
-          <Counter key={c.id} counter={c} oId="blue" onDelete={this.handleDelete}></Counter>
+          <Counter
+            key={c.id}
+            counter={c}
+            onIncrement={this.handleIncrement}
+            onDelete={this.handleDelete}
+          ></Counter>
         ))}
       </div>
     );
