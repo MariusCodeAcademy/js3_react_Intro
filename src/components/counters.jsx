@@ -36,6 +36,16 @@ class Counters extends Component {
   handleIncrement = (plusOrMinus, counter) => {
     console.log('plusOrMinus', plusOrMinus);
     console.log('counter', counter);
+
+    // pasidaryt state.counters kopija
+    const counterCopy = [...this.state.counters];
+
+    // surasti kuris counteris parase padinti
+
+    // kopijoj padidinti value 1
+
+    // this.setState({ :  });
+
     // niekada nekeiciam state tiesiogiai !!!!!!
     // this.state.count++;
 
