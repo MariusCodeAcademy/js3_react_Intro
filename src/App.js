@@ -12,8 +12,8 @@ class App extends Component {
       { id: 4, value: 11 },
     ],
     navbarColors: {
-      dark: 'bg-dark navbar-dark',
-      light: 'bg-light navbar-light',
+      dark: 'navbar bg-dark navbar-dark',
+      light: 'navbar navbar-light bg-light',
     },
     isNavbarLight: true,
   };
@@ -62,16 +62,25 @@ class App extends Component {
     // this.setState({ value: this.state.value + diff });
   };
 
+  handleNavColors = () => {
+    console.log('colors nav');
+    const isNavbarLight = !this.state.isNavbarLight;
+    this.setState({ isNavbarLight });
+  };
+
   render() {
-    const { counters } = this.state;
+    const { counters, navbarColors, isNavbarLight } = this.state;
     return (
       <div className="App ">
         <Navbar
           countersCount={counters.length}
           activeCount={counters.filter((c) => c.value > 0).length}
+          navColors={isNavbarLight ? navbarColors.light : navbarColors.dark}
         />
         {/* mygtukas invertuoja navbar */}
-        <button className="myBtn">Night mode</button>
+        <button onClick={this.handleNavColors} className="btn btn-outline-dark">
+          Night mode
+        </button>
         <main className="container mt-3">
           <Counters
             counters={counters}

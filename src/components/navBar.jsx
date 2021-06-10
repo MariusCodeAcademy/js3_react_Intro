@@ -4,15 +4,15 @@ const handleInvert = () => {
   console.log('handle');
 };
 
-const Navbar = ({ countersCount, activeCount }) => {
+const Navbar = (props) => {
   const myClasses = 'navbar navbar-light bg-light';
   return (
-    <nav className={myClasses}>
+    <nav className={props.navColors}>
       {/* <h2 style={{ fontSize: '1em' }}>Blue</h2> */}
       <span className="navbar-brand mb-0">
         <strong>Counter</strong>Anywhere{' '}
         <span className="badge badge-pill badge-primary">
-          {countersCount}/{activeCount}
+          {props.countersCount}/{props.activeCount}
         </span>
       </span>
       <button onClick={handleInvert} className="btn btn-outline-info">
