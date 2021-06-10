@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Counters from './components/counters';
 import Navbar from './components/navBar';
+import './css/my.css';
 
 class App extends Component {
   state = {
@@ -10,6 +11,11 @@ class App extends Component {
       { id: 3, value: 0 },
       { id: 4, value: 11 },
     ],
+    navbarColors: {
+      dark: 'bg-dark navbar-dark',
+      light: 'bg-light navbar-light',
+    },
+    isNavbarLight: true,
   };
 
   handleDelete = (idToDelete) => {
@@ -64,6 +70,8 @@ class App extends Component {
           countersCount={counters.length}
           activeCount={counters.filter((c) => c.value > 0).length}
         />
+        {/* mygtukas invertuoja navbar */}
+        <button className="myBtn">Night mode</button>
         <main className="container mt-3">
           <Counters
             counters={counters}
