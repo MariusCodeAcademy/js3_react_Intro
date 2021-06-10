@@ -24,7 +24,7 @@ class Counter extends Component {
   };
 
   render() {
-    console.log('this.props', this.props);
+    // console.log('this.props', this.props);
     return (
       <div className="mt-4">
         <span className="mr-3"># {this.props.id}</span>

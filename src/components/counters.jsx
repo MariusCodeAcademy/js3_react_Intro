@@ -20,10 +20,25 @@ class Counters extends Component {
     // console.log('whichOneClicked', idToDelete);
   };
 
+  handleReset = () => {
+    console.log('Reset please');
+    //gauti busena kuri yra counters kopija kurioje visi value: 0
+    const nunulinta = this.state.counters.map((c) => {
+      c.value = 0;
+      return c;
+    });
+    console.log(nunulinta);
+    // gave nustatom busena // patikrinam ar veikia
+    this.setState({ counters: nunulinta });
+  };
+
   render() {
     return (
       <div>
         <h2>Counters component</h2>
+        <button onClick={this.handleReset} className="btn btn-sm btn-warning">
+          Reset counters
+        </button>
         {this.state.counters.map((c) => (
           <Counter
             key={c.id}
