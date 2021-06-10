@@ -61,7 +61,12 @@ class App extends Component {
       <div className="App ">
         <Navbar />
         <main className="container mt-3">
-          <Counters />
+          <Counters
+            counters={this.state.counters}
+            onReset={this.handleReset}
+            onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement}
+          />
         </main>
       </div>
     );
