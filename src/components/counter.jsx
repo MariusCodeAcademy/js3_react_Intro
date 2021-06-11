@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
+  // ivyksta ivykus bet kokia pasikeitimui
+  componentDidUpdate() {
+    console.log('Counter - componentDidUpdate');
+  }
+  // ivyksta kai pasalinam elementa is componento
+  componentWillUnmount() {
+    console.log('Counter - componentWillUnmount');
+  }
+
   render() {
     console.log('Counter - render');
     return (
