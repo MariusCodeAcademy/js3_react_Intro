@@ -5,18 +5,31 @@ import './css/my.css';
 
 class App extends Component {
   state = {
-    counters: [
-      { id: 1, value: 4 },
-      { id: 2, value: 10 },
-      { id: 3, value: 0 },
-      { id: 4, value: 11 },
-    ],
+    counters: [],
     navbarColors: {
       dark: 'navbar bg-dark navbar-dark',
       light: 'navbar navbar-light bg-light',
     },
     isNavbarLight: true,
   };
+
+  constructor() {
+    super();
+    console.log('App - Contructor');
+  }
+  // ivyksta pries pat atvaizduojan componenta DOM
+  componentDidMount() {
+    console.log('App - Mount to Dom - componentDidMount');
+    // darom fetch req ir gaunam duomenis
+    const counterData = [
+      { id: 1, value: 4 },
+      { id: 2, value: 10 },
+      { id: 3, value: 0 },
+      { id: 4, value: 11 },
+    ];
+
+    this.setState({ counters: counterData });
+  }
 
   handleDelete = (idToDelete) => {
     // gauti state busena be to el kuris buvo paspaustas
@@ -69,6 +82,8 @@ class App extends Component {
   };
 
   render() {
+    console.log('App - Render');
+
     const { counters, navbarColors, isNavbarLight } = this.state;
     return (
       <div className="App ">

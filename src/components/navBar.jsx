@@ -5,6 +5,8 @@ const handleInvert = () => {
 };
 
 const Navbar = (props) => {
+  console.log('Navbar - Created');
+
   const myClasses = 'navbar navbar-light bg-light';
   return (
     <nav className={props.navColors}>

@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import Counter from './counter';
 
 class Counters extends Component {
+  componentDidMount() {
+    console.log('CounterSSS - did mount');
+  }
+
   render() {
+    console.log('CounterSSS - render');
     const { onDelete, onIncrement, onReset, counters } = this.props;
 
     return (
